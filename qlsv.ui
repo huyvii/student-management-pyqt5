@@ -7,18 +7,42 @@
     <x>0</x>
     <y>0</y>
     <width>1125</width>
-    <height>828</height>
+    <height>860</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Quản lý sinh viên</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="formLayoutWidget">
+
+   <widget class="QLabel" name="titleLabel">
     <property name="geometry">
      <rect>
       <x>40</x>
       <y>10</y>
+      <width>1041</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="text">
+     <string>QUẢN LÝ SINH VIÊN</string>
+    </property>
+   </widget>
+
+   <widget class="QWidget" name="formLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>60</y>
       <width>1041</width>
       <height>161</height>
      </rect>
@@ -89,13 +113,14 @@
      </item>
     </layout>
    </widget>
+
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>220</y>
+      <y>230</y>
       <width>1041</width>
-      <height>80</height>
+      <height>60</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -103,7 +128,7 @@
       <widget class="QPushButton" name="addButton">
        <property name="font">
         <font>
-         <pointsize>16</pointsize>
+         <pointsize>14</pointsize>
         </font>
        </property>
        <property name="text">
@@ -115,7 +140,7 @@
       <widget class="QPushButton" name="updateButton">
        <property name="font">
         <font>
-         <pointsize>16</pointsize>
+         <pointsize>14</pointsize>
         </font>
        </property>
        <property name="text">
@@ -127,7 +152,7 @@
       <widget class="QPushButton" name="deleteButton">
        <property name="font">
         <font>
-         <pointsize>16</pointsize>
+         <pointsize>14</pointsize>
         </font>
        </property>
        <property name="text">
@@ -135,16 +160,90 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="clearButton">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Làm trống form</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
+
+   <widget class="QWidget" name="searchLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>300</y>
+      <width>1041</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="searchLayout">
+     <item>
+      <widget class="QLabel" name="searchLabel">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Tìm kiếm (mã SV / họ tên):</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="searchEdit">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="placeholderText">
+        <string>Nhập mã SV hoặc họ tên để lọc...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="refreshButton">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Làm mới dữ liệu</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+
    <widget class="QTableWidget" name="studentListView">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>340</y>
+      <y>355</y>
       <width>1041</width>
-      <height>401</height>
+      <height>380</height>
      </rect>
+    </property>
+    <property name="sortingEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+    <property name="editTriggers">
+     <enum>QAbstractItemView::NoEditTriggers</enum>
+    </property>
+    <property name="selectionBehavior">
+     <enum>QAbstractItemView::SelectRows</enum>
     </property>
     <attribute name="horizontalHeaderDefaultSectionSize">
      <number>300</number>
@@ -180,6 +279,27 @@
      </property>
     </column>
    </widget>
+
+   <widget class="QLabel" name="statsLabel">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>745</y>
+      <width>1041</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+      <italic>true</italic>
+     </font>
+    </property>
+    <property name="text">
+     <string>Tổng số sinh viên: 0 | GPA trung bình: 0.00</string>
+    </property>
+   </widget>
+
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
