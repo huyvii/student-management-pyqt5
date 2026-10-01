@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+
+# Dữ liệu cá nhân của người dùng, không đưa lên git
+sv.csv
+sv.csv.tmp
